@@ -3,12 +3,12 @@ import { NextPageContext } from 'next';
 import { getSession } from 'next-auth/react';
 
 import Navbar from '@/components/Navbar';
-import Billboard from '@/components/Billboard';
+import Billboard from '@/components/BillBoard';
 import MovieList from '@/components/MovieList';
-import InfoModal from '@/components/InfoModal';
+import InfoModal from '@/components/InfoModel';
 import useMovieList from '@/hooks/useMovieList';
-import useFavorites from '@/hooks/useFavorites';
-import useInfoModalStore from '@/hooks/useInfoModalStore';
+import useFavorites from '@/hooks/useFavorite';
+import useInfoModalStore from '@/hooks/useInfoModel';
 
 export async function getServerSideProps(context: NextPageContext) {
   const session = await getSession(context);
@@ -30,11 +30,11 @@ export async function getServerSideProps(context: NextPageContext) {
 const Home = () => {
   const { data: movies = [] } = useMovieList();
   const { data: favorites = [] } = useFavorites();
-  const {isOpen, closeModal} = useInfoModalStore();
+  const {isOpen, closeModel} = useInfoModalStore();
 
   return (
     <>
-      <InfoModal visible={isOpen} onClose={closeModal} />
+      <InfoModal visible={isOpen} onClose={closeModel} />
       <Navbar />
       <Billboard />
       <div className="pb-40">
