@@ -31,7 +31,7 @@ export async function getServerSideProps(context: NextPageContext) {
 }
 
 const UserCard: React.FC<UserCardProps> = ({ name }) => {
-  const imgSrc = images[Math.floor(Math.random() * 4)];
+  const imgSrc = images[0];
 
   return (
     <div className="group flex-row w-44 mx-auto">
