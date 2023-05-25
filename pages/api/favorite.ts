@@ -1,9 +1,9 @@
 import { NextApiRequest,NextApiResponse } from "next";
 
 import { without } from "lodash";
-import prismadb from '@/lib/prismadb';
+import prismadb from '@/libs/prismadb';
 
-import serverAuth from "@/lib/serverAuth";
+import serverAuth from "@/libs/serverAuth";
 
 
 export default async function handler(req:NextApiRequest,res:NextApiResponse){
