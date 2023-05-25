@@ -14,7 +14,7 @@ const MovieCard:React.FC<MovieCardprops> = ({
     }) => {
 
     const router =useRouter();
-    const {openModel} =useInfoModel(); 
+    const {openModal} =useInfoModel(); 
     
     return (
         <div className="group bg-zinc-900 col-span relative h-[12vw]">
@@ -29,7 +29,7 @@ const MovieCard:React.FC<MovieCardprops> = ({
                             <FaPlay size={15}/>
                         </div>
                         <FavoriteButton movieId={data?.id}/>
-                        <div onClick={()=>openModel(data?.id)} className="cursor-pointer ml-auto group/item w-6 h-6 lg:w-10 lg:h-10 border-2 rounded-full flex justify-center items-center transition hover:border-neutral-300">
+                        <div onClick={()=>openModal(data?.id)} className="cursor-pointer ml-auto group/item w-6 h-6 lg:w-10 lg:h-10 border-2 rounded-full flex justify-center items-center transition hover:border-neutral-300">
                             <BiChevronDown size={30} className="text-white group-hover/item:text-neutral-300 "/>
                         </div>
 
