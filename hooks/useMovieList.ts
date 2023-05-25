@@ -1,17 +1,17 @@
-import useSWR from 'swr';
+import useSwr from 'swr'
 import fetcher from '@/libs/fetcher';
-import { FaLessThanEqual } from 'react-icons/fa';
 
-const useMovieList = () =>{
-    const {data, error, isLoading} =useSWR('api/movies',fetcher,{
-        revalidateOnReconnect:false,
-        revalidateOnFocus:false,
-        revalidateIfStale:false,
-    })
+const useMovies = () => {
+  const { data, error, isLoading } = useSwr('/api/movies', fetcher, {
+    revalidateIfStale: false,
+    revalidateOnFocus: false,
+    revalidateOnReconnect: false,
+  });
+  return {
+    data,
+    error,
+    isLoading
+  }
+};
 
-    return {
-        data,error,isLoading
-    }
-}
-
-export default useMovieList;
+export default useMovies;

@@ -1,20 +1,17 @@
-import { create } from "zustand";
+import { create } from 'zustand';
 
-export interface ModelStoreInterface {
-    movieId?:string,
-    isOpen:boolean,
-    openModel:(movieId:string)=> void;
-    closeModel:()=>void;
+export interface ModalStoreInterface {
+  movieId?: string;
+  isOpen: boolean;
+  openModal: (movieId: string) => void;
+  closeModal: () => void;
 }
 
-const useInfoModel =create<ModelStoreInterface>((set)=>({
-    movieId:undefined,
-    isOpen:false,
-    openModel:(movieId:string) =>set({
-        isOpen:true,
-        movieId
-    }),
-    closeModel:()=>set({isOpen:false,movieId:undefined}),
+const useInfoModalStore = create<ModalStoreInterface>((set) => ({
+  movieId: undefined,
+  isOpen: false,
+  openModal: (movieId: string) => set({ isOpen: true, movieId }),
+  closeModal: () => set({ isOpen: false, movieId: undefined }),
 }));
 
-export default useInfoModel
+export default useInfoModalStore;
