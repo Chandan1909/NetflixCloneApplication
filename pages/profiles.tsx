@@ -4,7 +4,7 @@ import { getSession } from "next-auth/react";
 import { useRouter } from "next/router";
 
 export async function getServerSideProps(context:NextPageContext){
-    const session =getSession();
+    const session =getSession(context);
 
     if(!session)
         return {
