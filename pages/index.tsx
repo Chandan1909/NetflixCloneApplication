@@ -34,6 +34,7 @@ const Home = () => {
 
   return (
     <>
+      <meta name="google-site-verification" content="HH-ljedLpcOBtV0ACmwUX0hCNbE6azj0eZubRYw_YuI" />
       <InfoModal visible={isOpen} onClose={closeModal} />
       <Navbar />
       <Billboard />
